@@ -22,8 +22,8 @@ public class Main {
 		boolean loop = true;
 		String stop = scan.nextLine();
 		
-		Document page = Jsoup.connect("https://dealsea.com/").timeout(6000).get();
-		Elements div = page.select("div");
+		//Document page = Jsoup.connect("https://dealsea.com/").timeout(6000).get();
+		//Elements div = page.select("div");
 		while(loop){
 			System.out.println(stop);
 			if(stop == "stop"){
