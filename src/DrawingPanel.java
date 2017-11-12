@@ -44,7 +44,9 @@ public class DrawingPanel extends javax.swing.JPanel {
 	 * @return User's input of waitTime as an Integer
 	 */
 	public int getWaitTime() {
-		return Integer.parseInt(_waitTime.getText());
+		int rawTime = Integer.parseInt(_waitTime.getText());
+		//multiply input to scale milliseconds to seconds
+		return rawTime * 1000;
 	}
 	
 	/**

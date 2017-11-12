@@ -21,6 +21,8 @@ public class ActionTimer extends Timer{
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// Add JSoup Code here
+			//_dp.getKeyword();
+			System.out.println("test");
 			
 		}
 		

@@ -18,21 +18,26 @@ public class MainPanel extends JPanel {
 		JPanel buttonPanel = new JPanel();
 		//buttons
 		JButton activate = new JButton("Activate");
+		JButton deactivate = new JButton("Deactivate");
 		activate.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				display.setTimerDelay(display.getWaitTime());
 				display.startTimer();
+				deactivate.setEnabled(true);
+				activate.setEnabled(false);
 			}
 			
 		});
-		JButton deactivate = new JButton("Deactivate");
+		
 		deactivate.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				display.stopTimer();
+				activate.setEnabled(true);
+				deactivate.setEnabled(false);
 				
 			}
 			
