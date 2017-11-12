@@ -14,15 +14,18 @@ public class MainPanel extends JPanel {
 		this.setLayout(new BorderLayout());
 		//create the drawing panel and add it to the center
 		this.add(display, BorderLayout.CENTER);
-		
 		JPanel buttonPanel = new JPanel();
+		
 		//buttons
 		JButton activate = new JButton("Activate");
 		JButton deactivate = new JButton("Deactivate");
+		
+		//button listeners
 		activate.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//**TODO
 				display.setTimerDelay(display.getWaitTime());
 				display.startTimer();
 				deactivate.setEnabled(true);
@@ -43,6 +46,7 @@ public class MainPanel extends JPanel {
 			
 		});
 		
+		//Panel and Layout
 		buttonPanel.add(activate);
 		buttonPanel.add(deactivate);
 		this.add(buttonPanel, BorderLayout.SOUTH);

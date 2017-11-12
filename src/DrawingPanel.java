@@ -40,7 +40,7 @@ public class DrawingPanel extends javax.swing.JPanel {
 	}
 	
 	/**
-	 * Wait time for the loop to sleep.
+	 * Wait time for the loop to sleep between actions.
 	 * @return User's input of waitTime as an Integer
 	 */
 	public int getWaitTime() {
