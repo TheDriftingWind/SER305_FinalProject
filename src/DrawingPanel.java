@@ -68,4 +68,8 @@ public class DrawingPanel extends javax.swing.JPanel {
 		_timer.stop();
 	}
 	
+	public void setTimerDelay(int wait){
+		_timer.setDelay(wait);
+	}
+	
 }
