@@ -10,7 +10,7 @@ public class DrawingPanel extends javax.swing.JPanel {
 	private JTextField _waitTime;
 	private JTextField _keyword;
 	//loop variables
-	boolean loop = true;
+	private ActionTimer _timer;
 	
 	
 	public DrawingPanel(MainPanel main){
@@ -20,6 +20,9 @@ public class DrawingPanel extends javax.swing.JPanel {
 		this.setSize(new java.awt.Dimension(500, 500));
 		this.setFocusable(true);
 		_main = main;
+		
+		//looping variables
+		_timer = new ActionTimer(this, _main);
 		
 		//TextFields
 		_waitTime = new JTextField("0", 5);
@@ -53,11 +56,16 @@ public class DrawingPanel extends javax.swing.JPanel {
 	}
 	
 	/**
-	 * sets loop to true of false
-	 * @param tf True/False
+	 * starts timer to begin loop
 	 */
-	public void setLoop(Boolean tf){
-		loop = tf;
+	public void startTimer(){
+		_timer.start();
+	}
+	/**
+	 * stops timer to stop loop
+	 */
+	public void stopTimer(){
+		_timer.stop();
 	}
 	
 }
