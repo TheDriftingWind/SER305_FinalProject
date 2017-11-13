@@ -24,7 +24,7 @@ public class ActionTimer extends Timer{
 			String keyword = _dp.getKeyword();
 			System.out.println(keyword);
 			
-			//1.) Pull elements from web-page
+			//1.) Pull elements from web-page tests s
 			
 			//2.) get an array of results to check the keyword against
 			
