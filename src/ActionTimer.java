@@ -21,8 +21,16 @@ public class ActionTimer extends Timer{
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// Add JSoup Code here
-			//_dp.getKeyword();
-			System.out.println("test");
+			String keyword = _dp.getKeyword();
+			System.out.println(keyword);
+			
+			//1.) Pull elements from web-page
+			
+			//2.) get an array of results to check the keyword against
+			
+			//3.) return the matching results
+			
+			//4.) open a new pop-up with the results
 			
 		}
 		
