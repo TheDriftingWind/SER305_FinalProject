@@ -41,7 +41,7 @@ public class ActionTimer extends Timer{
 			File home = FileSystemView.getFileSystemView().getHomeDirectory();
 			//make the url where the html document will be created
 			String url = home.getAbsolutePath();
-			url = url + "/test.html";
+			url = url + "/popup.html";
 			
 			//For testing purposes
 			System.out.println(url); 
