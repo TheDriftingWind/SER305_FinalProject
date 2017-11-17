@@ -63,14 +63,6 @@ public class ActionTimer extends Timer{
 			  for(int i = 0; i < itemList.size(); i++) {   
 		    	    System.out.print(itemList.get(i));
 		    	}  
-			  }
-			
-			
-		
-			
-			
-			
-			
 			
 			//4.) open a new pop-up with the results
 			//get the desktop directory
@@ -101,7 +93,7 @@ public class ActionTimer extends Timer{
 				e.printStackTrace();
 			}
 		}
-		
 	}
+}
 
 
