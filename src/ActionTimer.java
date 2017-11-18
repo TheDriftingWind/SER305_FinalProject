@@ -62,7 +62,10 @@ public class ActionTimer extends Timer{
 			
 			  for(int i = 0; i < itemList.size(); i++) {   
 		    	    System.out.print(itemList.get(i));
-		    	}  
+		    	}
+			  if(itemList.size() == 0){
+				  System.out.print("No items found");
+			  }
 			
 			//4.) open a new pop-up with the results
 			//get the desktop directory
