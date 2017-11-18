@@ -34,7 +34,7 @@ public class ActionTimer extends Timer{
 		ArrayList<String> itemList = new ArrayList<String>();
 
 		@Override
-		public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent arg0) { //START OF ACTION LOOP
 			// Add JSoup Code here
 			String keyword = _dp.getKeyword();
 			System.out.println(keyword);
@@ -92,7 +92,9 @@ public class ActionTimer extends Timer{
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
+			
+			
+		}//END OF ACTION LOOP
 	}
 }
 
