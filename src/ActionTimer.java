@@ -31,6 +31,7 @@ public class ActionTimer extends Timer{
 	}
 	
 	private class ActionLoopListener implements ActionListener {
+		
 		ArrayList<String> itemList = new ArrayList<String>();
 
 		@Override
@@ -64,6 +65,7 @@ public class ActionTimer extends Timer{
 		    	    System.out.print(itemList.get(i));
 		    	}  
 			
+			  
 			//4.) open a new pop-up with the results
 			//get the desktop directory
 			File home = FileSystemView.getFileSystemView().getHomeDirectory();
@@ -92,6 +94,9 @@ public class ActionTimer extends Timer{
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
+			
+			
 		}
 	}
 }
