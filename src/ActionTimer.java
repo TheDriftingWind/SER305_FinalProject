@@ -86,7 +86,7 @@ public class ActionTimer extends Timer{
 					+ "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
 					+ "</head>"
 					+ "<body>"
-					+ "<h1 style=\"text-align:center\">Deals</h1>"
+					+ "<h1 style=\"text-align:center\"><a href=\"https://dealsea.com\" >Deals</a></h1>"
 					+ "<div class=\"container\">";
 			html += popup_html;
 			html += "</body></div></html>";
