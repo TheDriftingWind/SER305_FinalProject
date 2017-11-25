@@ -59,9 +59,12 @@ public class ActionTimer extends Timer{
 			      Logger.getLogger(ActionTimer.class.getName())
 			            .log(Level.SEVERE, null, ex);
 			    }
-			
+			String popup_html = "";
 			  for(int i = 0; i < itemList.size(); i++) {   
 		    	    System.out.print(itemList.get(i));
+		    	    popup_html += "<p>";
+		    	    popup_html += itemList.get(i);
+		    	    popup_html += "</p>";
 		    	}
 			  if(itemList.size() == 0){
 				  System.out.print("No items found");
@@ -76,7 +79,9 @@ public class ActionTimer extends Timer{
 			
 			//For testing purposes
 			System.out.println(url); 
-			String html = "<!DOCTYPE html><html><head><title>Test</title></head><body><a href='https://www.google.com'>Link</a></body></html>";
+			String html = "<!DOCTYPE html><html><head><title>Test</title></head><body>";
+			html += popup_html;
+			html += "</body></html>";
 			
 			//create new file
 			File f = new File(url);
