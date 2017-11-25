@@ -62,9 +62,9 @@ public class ActionTimer extends Timer{
 			String popup_html = "";
 			  for(int i = 0; i < itemList.size(); i++) {   
 		    	    System.out.print(itemList.get(i));
-		    	    popup_html += "<p>";
+		    	    popup_html += "<div class=\"well well-sm\">";
 		    	    popup_html += itemList.get(i);
-		    	    popup_html += "</p>";
+		    	    popup_html += "</div>";
 		    	}
 			  if(itemList.size() == 0){
 				  System.out.print("No items found");
@@ -79,9 +79,17 @@ public class ActionTimer extends Timer{
 			
 			//For testing purposes
 			System.out.println(url); 
-			String html = "<!DOCTYPE html><html><head><title>Test</title></head><body>";
+			String html = "<!DOCTYPE html>"
+					+ "<html>"
+					+ "<head>"
+					+ "<title>Test</title>"
+					+ "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
+					+ "</head>"
+					+ "<body>"
+					+ "<h1 style=\"text-align:center\">Deals</h1>"
+					+ "<div class=\"container\">";
 			html += popup_html;
-			html += "</body></html>";
+			html += "</body></div></html>";
 			
 			//create new file
 			File f = new File(url);
