@@ -84,11 +84,12 @@ public class ActionTimer extends Timer{
 			String html = "<!DOCTYPE html>"
 					+ "<html>"
 					+ "<head>"
-					+ "<title>Deals available</title>"
+					+ "<title>Available Deals</title>"
 					+ "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
 					+ "</head>"
 					+ "<body>"
-					+ "<h1 style=\"text-align:center\"><a href=\"https://dealsea.com\" >Deals</a></h1>"
+					+ "<h1 style=\"text-align:center\"><a href=\"https://dealsea.com\" >Deals on " + keyword 
+					+ "</a></h1>"
 					+ "<div class=\"container\">";
 			html += popup_html;
 			html += "</body></div></html>";

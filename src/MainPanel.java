@@ -26,10 +26,15 @@ public class MainPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				//**TODO
+				if(display.getWaitTime() > 0){
 				display.setTimerDelay(display.getWaitTime());
 				display.startTimer();
 				deactivate.setEnabled(true);
 				activate.setEnabled(false);
+				display.setStatus("Active");
+				} else {
+					display.setStatus("Invalid Time Interval");
+				}
 			}
 			
 		});
@@ -41,7 +46,7 @@ public class MainPanel extends JPanel {
 				display.stopTimer();
 				activate.setEnabled(true);
 				deactivate.setEnabled(false);
-				
+				display.setStatus("Stopped");
 			}
 			
 		});

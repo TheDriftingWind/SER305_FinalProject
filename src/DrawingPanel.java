@@ -11,6 +11,8 @@ public class DrawingPanel extends javax.swing.JPanel {
 	private JTextField _keyword;
 	//loop variables
 	private ActionTimer _timer;
+	//status label
+	private JLabel _status;
 	
 	
 	public DrawingPanel(MainPanel main){
@@ -25,13 +27,17 @@ public class DrawingPanel extends javax.swing.JPanel {
 		_timer = new ActionTimer(this, _main);
 		
 		//TextFields
-		_waitTime = new JTextField("0", 5);
-		_keyword = new JTextField("0", 5);
+		_waitTime = new JTextField("", 5);
+		_keyword = new JTextField("", 5);
+		//Labels
+		_status = new JLabel("Awaiting Input");
 		
-		this.setLayout(new GridLayout(3,2));
+		this.setLayout(new GridLayout(4,2));
 		
+		this.add(new JLabel("Status:"));
+		this.add(_status);
 		//waitTime row
-		this.add(new JLabel("Checking Time(s)"));
+		this.add(new JLabel("Checking Time(m)"));
 		this.add(_waitTime);
 		
 		//keyword row
@@ -46,7 +52,7 @@ public class DrawingPanel extends javax.swing.JPanel {
 	public int getWaitTime() {
 		int rawTime = Integer.parseInt(_waitTime.getText());
 		//multiply input to scale milliseconds to seconds
-		return rawTime * 1000;
+		return rawTime * 1000 * 60;
 	}
 	
 	/**
@@ -72,6 +78,10 @@ public class DrawingPanel extends javax.swing.JPanel {
 	
 	public void setTimerDelay(int wait){
 		_timer.setDelay(wait);
+	}
+	
+	public void setStatus(String s){
+		_status.setText(s);
 	}
 	
 }
