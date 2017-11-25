@@ -45,12 +45,13 @@ public class ActionTimer extends Timer{
 			try {
 			      String url = "https://dealsea.com/";
 			      Document doc = Jsoup.connect(url).get();
-			      Elements paragraphs = doc.select("p");
+			      Elements paragraphs = doc.select("div.dealbox");
 			      for(Element p : paragraphs)
 			    	  
 			    	  //check if keyword matches text
 			    	  if ( p.text().toLowerCase().indexOf(keyword.toLowerCase()) != -1 && p.text().indexOf("$") != -1) {
-			    		  itemList.add(p.text());
+			    		  p.select("a").attr("href", "https://dealsea.com" + p.select("a").attr("href"));
+			    		  itemList.add(p.outerHtml());
 			    	  }
 			      
 			    
@@ -68,6 +69,7 @@ public class ActionTimer extends Timer{
 		    	}
 			  if(itemList.size() == 0){
 				  System.out.print("No items found");
+				  popup_html += "<p>No deals were found</p>";
 			  }
 			
 			//4.) open a new pop-up with the results
@@ -82,7 +84,7 @@ public class ActionTimer extends Timer{
 			String html = "<!DOCTYPE html>"
 					+ "<html>"
 					+ "<head>"
-					+ "<title>Test</title>"
+					+ "<title>Deals available</title>"
 					+ "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
 					+ "</head>"
 					+ "<body>"
