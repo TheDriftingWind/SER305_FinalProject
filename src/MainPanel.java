@@ -19,6 +19,7 @@ public class MainPanel extends JPanel {
 		//buttons
 		JButton activate = new JButton("Activate");
 		JButton deactivate = new JButton("Deactivate");
+		deactivate.setEnabled(false);
 		
 		//button listeners
 		activate.addActionListener(new ActionListener(){

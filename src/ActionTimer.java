@@ -112,7 +112,7 @@ public class ActionTimer extends Timer{
 				e.printStackTrace();
 			}
 			
-			
+			itemList.clear();
 		}//END OF ACTION LOOP//
 	}
 }
