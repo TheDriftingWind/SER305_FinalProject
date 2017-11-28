@@ -45,12 +45,13 @@ public class ActionTimer extends Timer{
 			try {
 			      String url = "https://dealsea.com/";
 			      Document doc = Jsoup.connect(url).get();
-			      Elements paragraphs = doc.select("p");
+			      Elements paragraphs = doc.select("div.dealbox");
 			      for(Element p : paragraphs)
 			    	  
 			    	  //check if keyword matches text
 			    	  if ( p.text().toLowerCase().indexOf(keyword.toLowerCase()) != -1 && p.text().indexOf("$") != -1) {
-			    		  itemList.add(p.text());
+			    		  p.select("a").attr("href", "https://dealsea.com" + p.select("a").attr("href"));
+			    		  itemList.add(p.outerHtml());
 			    	  }
 			      
 			    
@@ -59,12 +60,16 @@ public class ActionTimer extends Timer{
 			      Logger.getLogger(ActionTimer.class.getName())
 			            .log(Level.SEVERE, null, ex);
 			    }
-			
+			String popup_html = "";
 			  for(int i = 0; i < itemList.size(); i++) {   
 		    	    System.out.print(itemList.get(i));
+		    	    popup_html += "<div class=\"well well-sm\">";
+		    	    popup_html += itemList.get(i);
+		    	    popup_html += "</div>";
 		    	}
 			  if(itemList.size() == 0){
 				  System.out.print("No items found");
+				  popup_html += "<p>No deals were found</p>";
 			  }
 			
 			//4.) open a new pop-up with the results
@@ -76,7 +81,18 @@ public class ActionTimer extends Timer{
 			
 			//For testing purposes
 			System.out.println(url); 
-			String html = "<!DOCTYPE html><html><head><title>Test</title></head><body><a href='https://www.google.com'>Link</a></body></html>";
+			String html = "<!DOCTYPE html>"
+					+ "<html>"
+					+ "<head>"
+					+ "<title>Available Deals</title>"
+					+ "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
+					+ "</head>"
+					+ "<body>"
+					+ "<h1 style=\"text-align:center\"><a href=\"https://dealsea.com\" >Deals on " + keyword 
+					+ "</a></h1>"
+					+ "<div class=\"container\">";
+			html += popup_html;
+			html += "</body></div></html>";
 			
 			//create new file
 			File f = new File(url);
@@ -96,8 +112,8 @@ public class ActionTimer extends Timer{
 				e.printStackTrace();
 			}
 			
-			
-		}//END OF ACTION LOOP
+			itemList.clear();
+		}//END OF ACTION LOOP//
 	}
 }
 
