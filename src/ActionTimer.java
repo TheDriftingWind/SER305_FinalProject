@@ -49,7 +49,7 @@ public class ActionTimer extends Timer{
 			      for(Element p : paragraphs)
 			    	  
 			    	  //check if keyword matches text
-			    	  if ( p.text().toLowerCase().indexOf(keyword.toLowerCase()) != -1 && p.text().indexOf("$") != -1) {
+			    	  if ( p.select("div.posttext").text().toLowerCase().indexOf(keyword.toLowerCase()) != -1 && p.text().indexOf("$") != -1) {
 			    		  p.select("a").attr("href", "https://dealsea.com" + p.select("a").attr("href"));
 			    		  itemList.add(p.outerHtml());
 			    	  }
@@ -76,7 +76,7 @@ public class ActionTimer extends Timer{
 			//get the desktop directory
 			File home = FileSystemView.getFileSystemView().getHomeDirectory();
 			//make the url where the html document will be created
-			String url = home.getAbsolutePath();
+			String url = home.getAbsolutePath(); //Change to set the destination of where the popup is saved
 			url = url + "/popup.html";
 			
 			//For testing purposes
